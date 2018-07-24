@@ -1,4 +1,5 @@
 //sudo apt install ffmpeg
+//ffmpeg -re -i 20180607_144927.mp4 -c copy -f flv rtmp://localhost/live/a
 const koa = require('koa');
 const Router = require('koa-router');
 const logger = require('koa-logger');
