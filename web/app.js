@@ -29,8 +29,14 @@ app.use(serve('./views'));
 app.use(serve('./public'));
 
 router.get('/',home);
+router.get('/socket',socket);
+
 async function home(ctx){
   ctx.body = await ctx.render('home',{data:'Hello RTMP'});
+}
+
+async function socket(ctx){
+  ctx.body = await ctx.render('socket',{data:'Hello RTMP'});
 }
 
 app.listen(3000);
