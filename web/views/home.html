@@ -5,22 +5,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.bootcss.com/flv.js/1.4.0/flv.min.js"></script>
+    <script src="flv.min.js"></script>
 </head>
 
 <body>
     <h1>{{data}}</h1>
-    <video id="videoElement"></video>
+    <video id="videoElement" controls preload="auto" width="640" height="300"></video>
     <script>
         if (flvjs.isSupported()) {
             var videoElement = document.getElementById('videoElement');
             var flvPlayer = flvjs.createPlayer({
                 type: 'flv',
-                url: 'http://localhost:8000/live/a.flv'
+                url: 'http://10.20.0.34:8000/live/a.flv'
             });
             flvPlayer.attachMediaElement(videoElement);
             flvPlayer.load();
-            flvPlayer.play();
+            setTimeout(()=>{
+              flvPlayer.play();
+            });
         }
     </script>
 </body>

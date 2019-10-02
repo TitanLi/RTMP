@@ -10,7 +10,7 @@
 
 <body>
     <h1>{{data}}</h1>
-    <video id="videoElement"></video>
+    <video id="videoElement" controls preload="auto" width="640" height="300"></video>
     <script>
         if (flvjs.isSupported()) {
             var videoElement = document.getElementById('videoElement');
